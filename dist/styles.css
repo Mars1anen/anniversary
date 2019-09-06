@@ -1,0 +1,392 @@
+@import 'assets/fonts/ProximaNova/font.css';
+body {
+  margin: 0;
+  position: relative;
+}
+
+.slide {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: absolute;
+}
+
+.slide.inactive-slide {
+  display: none;
+}
+
+.btn {
+  padding: 10px 8px;
+  border: none;
+  font: 23px Georgia;
+  cursor: pointer;
+  outline: none;
+}
+
+#modal-window {
+  display: none;
+  top: 30%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Modal Body */
+}
+#modal-window .modal-content {
+  max-width: 840px;
+  margin: auto;
+}
+#modal-window .modal-header, #modal-window .modal-footer {
+  display: flex;
+  font: 18px Arial;
+  padding: 2px 36px;
+  background-color: #323232;
+  color: #f2f2f4;
+  min-height: 22px;
+  border-radius: 2px;
+}
+#modal-window .modal-header h2, #modal-window .modal-footer h2 {
+  flex-grow: 1;
+  text-align: center;
+}
+#modal-window .modal-header #modal-close, #modal-window .modal-footer #modal-close {
+  display: block;
+  border-radius: 10px;
+  font-size: 36px;
+  line-height: 76px;
+  cursor: pointer;
+}
+#modal-window .modal-header #modal-close:hover, #modal-window .modal-footer #modal-close:hover {
+  text-decoration: underline;
+  color: white;
+}
+#modal-window .modal-body {
+  text-align: center;
+  padding: 20px 36px;
+  background: linear-gradient(307deg, #323232, #413d3db0);
+  border-radius: 2px;
+}
+
+@media all and (max-height: 1252px) {
+  #modal-window {
+    top: 10%;
+  }
+}
+@media all and (max-height: 950px) {
+  #modal-window {
+    top: 0%;
+  }
+}
+.first-slide {
+  display: grid;
+  grid-auto-rows: 140px 140px 140px auto;
+  grid-row-gap: 1ch;
+  padding-top: 40px;
+  background-color: #fff1f3;
+  transition: background-color 2s linear;
+}
+.first-slide__mh {
+  margin-left: 40px;
+  opacity: 0;
+}
+.first-slide #papa {
+  text-align: left;
+}
+.first-slide #papa svg {
+  max-width: 300px;
+  position: relative;
+  left: 20%;
+  fill: #323232;
+}
+.first-slide #happy_birthday {
+  text-align: right;
+}
+.first-slide #happy_birthday svg {
+  max-width: 1000px;
+  position: relative;
+  right: 5%;
+  fill: #323232;
+  width: 100%;
+}
+.first-slide #text_roulette {
+  min-height: 90px;
+  text-align: center;
+  align-self: flex-end;
+}
+.first-slide #text_roulette svg {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  fill: #f9cf00;
+}
+.first-slide #text_roulette #roulette_longeviety {
+  display: none;
+  opacity: 0;
+}
+.first-slide__choose-age {
+  display: flex;
+  justify-content: space-around;
+}
+.first-slide__odometer-container {
+  width: 310px;
+  align-self: center;
+  order: 2;
+}
+.first-slide__wish {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  opacity: 0;
+}
+.first-slide__wish .btn {
+  background: #efad36;
+  box-shadow: 3px 3px 0px 2px #a5854cd6;
+  color: #f2f2f4;
+}
+.first-slide__wish .btn-icon-group {
+  display: flex;
+  flex-direction: column;
+}
+.first-slide__wish .btn-icon-group .btn {
+  display: flex;
+  position: relative;
+  color: #10112f;
+}
+.first-slide__wish .btn-icon-group span {
+  flex-grow: 1;
+}
+.first-slide__wish .btn-icon-group__icon {
+  height: 100%;
+  position: absolute;
+  fill: #10112f;
+  right: 26px;
+  top: 4px;
+  outline: none;
+}
+.first-slide__wish .btn:hover {
+  background: #f9cf00;
+  color: #323232;
+  transition: all 0.5s ease-in;
+}
+.first-slide__wish label {
+  font: 36px Georgia, serif;
+  text-decoration-color: #10112f;
+  text-decoration-line: underline;
+}
+.first-slide__wish input {
+  margin: 20px auto;
+  min-height: 80px;
+  background: none;
+  font-size: 1px;
+  font-family: Georgia, serif;
+  border: none;
+  border-bottom: 5px dashed #323232;
+  text-align: center;
+}
+.first-slide__wish input:focus {
+  border-color: #f9cf00;
+  outline: none;
+}
+.first-slide__odometer {
+  opacity: 0;
+  height: 161px;
+  max-width: 310px;
+  margin: auto;
+  background: url("assets/odometer/frame.svg") no-repeat;
+}
+.first-slide__odometer-overlay {
+  max-height: 147px;
+  margin: 0 24px 17px 12px;
+  width: auto;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  top: 7px;
+  justify-content: space-around;
+}
+.first-slide__odometer-numbers {
+  width: 30%;
+  height: 9999px;
+  background-position-y: -23.1%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.first-slide__odometer #number_1 {
+  background-image: url("assets/odometer/numbers_black.svg");
+  left: -5px;
+  fill: #10112f;
+}
+.first-slide__odometer #number_2 {
+  background-image: url("assets/odometer/numbers_black.svg");
+  left: -2px;
+  fill: #10112f;
+}
+.first-slide__odometer #number_3 {
+  background-image: url("assets/odometer/numbers_white.svg");
+  left: 1px;
+}
+.first-slide__odometer-title {
+  display: flex;
+  transform: translateX(-100vw);
+  max-width: 310px;
+  width: 90%;
+  margin: 22px auto;
+  fill: #10112f;
+}
+.first-slide__odometer-title #letter_o {
+  width: 12.5%;
+}
+.first-slide__odometer-title #letter_l {
+  width: 12.5%;
+  opacity: 0;
+  transform: translateY(-100vh);
+}
+.first-slide__odometer-title #letter_dometr {
+  width: 75%;
+}
+
+.second-slide {
+  background-color: #E7F5FA;
+  transition: background-color 2s linear;
+}
+.second-slide__words {
+  display: grid;
+  grid-auto-rows: 1fr 1fr;
+  max-height: 300px;
+  margin: 40px;
+}
+.second-slide__words .second-slide__mh {
+  font: 82px "ProximaNova";
+  color: #323232;
+  opacity: 0;
+  position: relative;
+  width: 90%;
+}
+.second-slide__words #friends-family {
+  left: 10%;
+}
+.second-slide__words #recorded {
+  right: 10%;
+  text-align: right;
+  color: #f9cf00;
+}
+.second-slide__balloons {
+  width: 100%;
+  display: grid;
+  list-style: none;
+  padding: 0;
+  grid-template-columns: repeat(auto-fit, 237px);
+  grid-gap: 2ch;
+  padding: 0 25px;
+}
+.second-slide__balloons-item {
+  width: 237px;
+  height: 250px;
+  background-image: url("assets/balloons-sprite.png");
+  position: relative;
+  opacity: 0.7;
+  transform: translateY(2000px);
+  cursor: pointer;
+}
+.second-slide__balloons-item:hover {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.second-slide__balloons #sonya {
+  background-position: 0px -20px;
+  top: -49px;
+  left: -42px;
+}
+.second-slide__balloons #store {
+  background-position: -229px -20px;
+  top: -39px;
+  left: -35px;
+}
+.second-slide__balloons #artemwife {
+  background-position: -458px -20px;
+  top: -23px;
+  left: -16px;
+}
+.second-slide__balloons #zheltov {
+  background-position: -687px -20px;
+  top: -14px;
+  left: 43px;
+}
+.second-slide__balloons #kravtsov {
+  background-position: -916px -20px;
+  top: -46px;
+  left: 3px;
+}
+.second-slide__balloons #vlasov {
+  background-position: -1145px -20px;
+  top: -30px;
+  left: 42px;
+}
+.second-slide__balloons #ufa {
+  background-position: -1374px -20px;
+  top: -12px;
+  left: 47px;
+}
+.second-slide__balloons #lenya {
+  background-position: 0px 267px;
+  top: 19px;
+  left: 49px;
+}
+.second-slide__balloons #kostya {
+  background-position: -229px 267px;
+  top: 42px;
+  left: 21px;
+}
+.second-slide__balloons #stepka {
+  background-position: -458px 267px;
+  top: 26px;
+  left: -31px;
+}
+.second-slide__balloons #kalinina {
+  background-position: -687px 267px;
+  top: -32px;
+  left: -10px;
+}
+.second-slide__balloons #ozerov {
+  background-position: -916px 267px;
+  top: -13px;
+  left: -50px;
+}
+.second-slide__balloons #zina {
+  background-position: -1145px 267px;
+  top: 50px;
+  left: -41px;
+}
+.second-slide__balloons #konovalova {
+  background-position: -1374px 267px;
+  top: 24px;
+  left: -39px;
+}
+
+#sonya-drawing {
+  width: 560px;
+  background-image: url(assets/sonya-drawing.jpg);
+  background-size: contain;
+  height: 393px;
+  margin: auto;
+}
+
+@media all and (max-width: 752px) {
+  .second-slide__words {
+    margin: 10px 0;
+  }
+  .second-slide__words .second-slide__mh {
+    position: static;
+  }
+}
+@media all and (min-width: 1612px) {
+  .second-slide__words {
+    margin-bottom: 10%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,90 @@
+@import 'assets/fonts/ProximaNova/font.css';
+
+html {
+    // border: 10px solid #f9cf00;
+}
+body {
+    margin: 0;
+    position: relative;
+}
+.slide {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+}
+.slide.inactive-slide {
+    display: none;
+}
+.btn {
+    padding: 10px 8px;
+    border: none;
+    font: 23px Georgia;
+    cursor: pointer;
+    outline: none;
+}
+
+$modal-background: #ec2123;
+$modal-text: #f2f2f4;
+#modal-window {
+    display: none;
+    top: 30%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+
+
+    .modal-content {
+        max-width: 840px;
+        margin: auto;
+    }
+
+    .modal-header, .modal-footer {
+        display: flex;
+        font: 18px Arial;
+        padding: 2px 36px;
+        background-color: #323232;
+        color: $modal-text;
+        min-height: 22px;
+        border-radius: 2px;
+
+        h2 {
+            flex-grow: 1;
+            text-align: center;
+        }
+        #modal-close {
+            display: block;
+            border-radius: 10px;
+            font-size: 36px;
+            line-height: 76px;
+            cursor: pointer;
+        }
+        #modal-close:hover {
+            text-decoration: underline;
+            color: white;
+        }
+    }
+  
+    /* Modal Body */
+    .modal-body {
+        text-align: center;
+        padding: 20px 36px;
+        background: linear-gradient(307deg, #323232, #413d3db0);
+        border-radius: 2px;
+    }
+}
+@media all and (max-height: 1252px ) {
+    #modal-window {
+        top: 10%;
+    }
+}
+@media all and (max-height: 950px ) {
+    #modal-window {
+        top: 0%;
+    }
+}

@@ -1,0 +1,152 @@
+// Colors
+$bright-gold: #f9cf00;
+$pale-blue: #E7F5FA;
+// Sizes
+$balloon-height: 250px;
+$balloon-width: 237px;
+
+@mixin getBackgroundPos($n, $line) {
+    background-position: #{($n - 1) * -229px} #{($line - 1) * 287px - 20px};
+}
+@mixin randomizeOffset() {
+    $prefixX: 1;
+    $prefixY: 1;
+    @if random() > 0.5 {    
+        $prefixX: -1;
+    }
+    @if random() > 0.5 {    
+        $prefixY: -1;
+    }
+    top: #{$prefixY * random(50)}px;
+    left: #{$prefixX * random(50)}px;
+}
+
+.second-slide {
+    background-color: $pale-blue;
+    transition: background-color 2s linear;
+
+    &__words {
+        display: grid;
+        grid-auto-rows: 1fr 1fr;
+        max-height: 300px;
+        margin: 40px;
+
+        .second-slide__mh {
+            font: 82px 'ProximaNova';
+            color: #323232;
+            opacity: 0;
+            position: relative;
+            width: 90%;
+        }
+        #friends-family {
+            left: 10%;
+        }
+        #recorded {
+            right: 10%;
+            text-align: right;
+            color: $bright-gold;
+        }
+    }
+    &__balloons {
+        width: 100%;
+        display: grid;
+        list-style: none;
+        padding: 0;
+        grid-template-columns: repeat(auto-fit, $balloon-width);
+        grid-gap: 2ch;
+        padding: 0 25px;
+
+        &-item {
+            width: $balloon-width;
+            height: 250px;
+            background-image: url('assets/balloons-sprite.png');
+            position: relative;
+            opacity: 0.7;
+            transform: translateY(2000px);
+            cursor: pointer;
+        }
+        &-item:hover {
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+
+        #sonya {
+            @include getBackgroundPos(1, 1);
+            @include randomizeOffset;
+        }
+        #store {
+            @include getBackgroundPos(2, 1);
+            @include randomizeOffset;
+        }
+        #artemwife {
+            @include getBackgroundPos(3, 1);
+            @include randomizeOffset;
+        }
+        #zheltov {
+            @include getBackgroundPos(4, 1);
+            @include randomizeOffset;
+        }
+        #kravtsov {
+            @include getBackgroundPos(5, 1);
+            @include randomizeOffset;
+        }
+        #vlasov {
+            @include getBackgroundPos(6, 1);
+            @include randomizeOffset;
+        }
+        #ufa {
+            @include getBackgroundPos(7, 1);
+            @include randomizeOffset;
+        }
+        #lenya {
+            @include getBackgroundPos(1, 2);
+            @include randomizeOffset;
+        }
+        #kostya {
+            @include getBackgroundPos(2, 2);
+            @include randomizeOffset;
+        }
+        #stepka {
+            @include getBackgroundPos(3, 2);
+            @include randomizeOffset;
+        }
+        #kalinina {
+            @include getBackgroundPos(4, 2);
+            @include randomizeOffset;
+        }
+        #ozerov {
+            @include getBackgroundPos(5, 2);
+            @include randomizeOffset;
+        }
+        #zina {
+            @include getBackgroundPos(6, 2);
+            @include randomizeOffset;
+        }
+        #konovalova {
+            @include getBackgroundPos(7, 2);
+            @include randomizeOffset;
+        }
+    }
+}
+
+#sonya-drawing {
+    width: 560px;
+    background-image: url(assets/sonya-drawing.jpg);
+    background-size: contain;
+    height: 393px;
+    margin: auto;
+}
+@media all and (max-width: 752px) {
+    .second-slide__words {
+        margin: 10px 0;
+
+        .second-slide__mh {
+            position: static;
+        }
+    }
+}
+@media all and (min-width: 1612px) {
+    .second-slide__words {
+        margin-bottom: 10%;
+    }
+}

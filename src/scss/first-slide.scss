@@ -1,0 +1,210 @@
+// Colors
+$crimson: #ec2123;
+$silver-white: #f2f2f4;
+$deep-navy: #10112f;
+$dark-grey: #323232;
+$bright-gold: #f9cf00;
+$darker-gold: #efad36;
+
+$light-pink: #fff1f3;
+
+// Sizes
+// $odo_width: 572px;
+$odo_width: 310px;
+
+// Mixins
+@mixin deep-navy-fill {
+    fill: $deep-navy;
+}
+@mixin dark-grey-fill {
+    fill: $dark-grey;
+}
+@mixin hidden-svg {
+    display: none;
+    opacity: 0;
+}
+
+.first-slide {
+    display: grid;
+    grid-auto-rows: 140px 140px 140px auto;
+    grid-row-gap: 1ch;
+    padding-top: 40px;
+    background-color: $light-pink;
+    transition: background-color 2s linear;
+
+    &__mh {
+        margin-left: 40px;
+        opacity: 0;
+    }
+    #papa {
+        text-align: left;
+
+        svg {
+            max-width: 300px;
+            position: relative;
+            left: 20%;
+            @include dark-grey-fill;
+        }
+    }
+    #happy_birthday {
+        text-align: right;
+
+        svg {
+            max-width: 1000px;
+            position: relative;
+            right: 5%;
+            @include dark-grey-fill;
+            width: 100%;
+        }
+    }
+    #text_roulette {
+        min-height: 90px;
+        text-align: center;
+        align-self: flex-end;
+
+        svg{
+            max-width: 900px;
+            width: 100%;
+            margin: auto;
+            fill: $bright-gold;
+        }
+
+        #roulette_longeviety {
+            @include hidden-svg;
+        }
+    }
+
+    &__choose-age {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__odometer-container {
+        width: $odo_width;
+        align-self: center;
+        order: 2;
+    }
+
+    &__wish {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        opacity: 0;
+        
+        .btn { 
+            background: $darker-gold;
+            box-shadow: 3px 3px 0px 2px #a5854cd6;
+            color: #f2f2f4;
+        }
+        .btn-icon-group {
+            display: flex;
+            flex-direction: column;
+
+            .btn {
+                display: flex;
+                position: relative;
+                color: $deep-navy;
+    
+            }
+            span {
+                flex-grow: 1;
+            }
+            &__icon {
+                height: 100%;
+                position: absolute;
+                fill: $deep-navy;
+                right: 26px;
+                top: 4px;
+                outline: none;
+            }
+        }
+        
+        .btn:hover { 
+            background: $bright-gold;
+            color: $dark-grey;
+            transition: all 0.5s ease-in;
+        }
+        label {
+            font: 36px Georgia, serif;
+            text-decoration-color: $deep-navy;
+            text-decoration-line: underline;
+        }
+        input {
+            margin: 20px auto;
+            min-height: 80px;
+            background: none;
+            font-size: 1px;
+            font-family: Georgia, serif;
+            border: none;
+            border-bottom: 5px dashed #323232;
+            text-align: center;
+        }
+        input:focus {
+            border-color: $bright-gold;
+            outline: none;
+        }
+    }
+
+    &__odometer {
+        opacity: 0;
+        height: 161px;
+        max-width: $odo_width;
+        margin: auto;
+        background: url('assets/odometer/frame.svg') no-repeat;
+        
+        &-overlay {
+            max-height: 147px;
+            margin: 0 24px 17px 12px;
+            width: auto;
+            overflow: hidden;
+
+            display: flex;
+            position: relative;
+            top: 7px;
+            justify-content: space-around;
+        }
+
+        &-numbers {
+            width: 30%;
+            height: 9999px;
+            background-position-y: -23.1%;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        #number_1 {
+            background-image: url('assets/odometer/numbers_black.svg');
+            left: -5px;
+            @include deep-navy-fill;
+        }
+        #number_2 {
+            background-image: url('assets/odometer/numbers_black.svg');
+            left: -2px;
+            @include deep-navy-fill;
+        }
+        #number_3 {
+            background-image: url('assets/odometer/numbers_white.svg');
+            left: 1px;
+        }
+    }
+
+    &__odometer-title {
+        display: flex;
+        transform: translateX(-100vw);
+        max-width: $odo_width;
+        width: 90%;
+        margin: 22px auto;
+        @include deep-navy-fill;
+
+        #letter_o {
+            width: 12.5%;
+        }
+        #letter_l {
+            width: 12.5%;
+            opacity: 0;
+            transform: translateY(-100vh);
+        }
+        #letter_dometr {
+            width: 75%;
+        }
+    }
+}
