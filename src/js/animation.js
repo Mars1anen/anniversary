@@ -88,6 +88,7 @@ function changeSlides() {
     TweenLite.to('#text_roulette', 3, { transform: 'translateX(-100%)', opacity: 0 });
 
     TweenLite.to('#happy_birthday', 3, { transform: 'translateX(100%)', opacity: 0 });
+    TweenLite.to('.first-slide__choose-age', 3, { transform: 'translateX(100%)', opacity: 0 });
     TweenLite.to('.first-slide', 2, { 'background-color': '#E7F5FA', delay: 1 });
     setTimeout(() => {
         animateBalloons();
