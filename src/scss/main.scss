@@ -65,11 +65,12 @@ $modal-text: #f2f2f4;
         border-radius: 2px;
 
         h2 {
-            flex-grow: 1;
+            flex-grow: 3;
             text-align: center;
         }
         #modal-close {
             display: block;
+            flex-grow: 0;
             border-radius: 10px;
             font-size: 36px;
             line-height: 76px;

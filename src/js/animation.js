@@ -55,7 +55,7 @@ function isolateSingleBalloon(event) {
         TweenLite.to(balloon, 1, { opacity: 0 });
         TweenLite.to(balloon, 1, { 'display': 'none', delay: 1 });
     });
-    tl.to('.second-slide__words', 1, { 'max-height': '20px', overflow: 'hidden', delay: 1 });
+    tl.to('.second-slide__words', 1, { 'max-height': '0px', overflow: 'hidden', delay: 1 });
     setVideo(target.id);
     setTimeout(() => {
         openModal(other);

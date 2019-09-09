@@ -29,6 +29,7 @@ $odo_width: 310px;
 .first-slide {
     display: grid;
     max-height: 100vh;
+    min-height: calc(100vh - 20px);
     padding-left: 40px;
     grid-template-rows: repeat(2, 90px) minmax(min-content, 1fr) 253px;
     grid-row-gap: 1ch;
@@ -36,6 +37,7 @@ $odo_width: 310px;
     transition: background-color 2s linear;
 
     &__mh {
+        width: 90%;
         opacity: 0;
     }
     #papa {
@@ -203,7 +205,7 @@ $odo_width: 310px;
 
 @media all and (max-height: 728px ) {
     .first-slide {
-        grid-template-rows: repeat(3, minmax(42px, 1fr)) 253px;
+        grid-template-rows: minmax(42px, 1fr) repeat(2, minmax(42px, 2fr)) 253px;
         grid-row-gap: 0;
     }
 }

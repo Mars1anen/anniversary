@@ -61,11 +61,12 @@ body {
   border-radius: 2px;
 }
 #modal-window .modal-header h2, #modal-window .modal-footer h2 {
-  flex-grow: 1;
+  flex-grow: 3;
   text-align: center;
 }
 #modal-window .modal-header #modal-close, #modal-window .modal-footer #modal-close {
   display: block;
+  flex-grow: 0;
   border-radius: 10px;
   font-size: 36px;
   line-height: 76px;
@@ -112,6 +113,7 @@ body {
 .first-slide {
   display: grid;
   max-height: 100vh;
+  min-height: calc(100vh - 20px);
   padding-left: 40px;
   grid-template-rows: repeat(2, 90px) minmax(min-content, 1fr) 253px;
   grid-row-gap: 1ch;
@@ -119,6 +121,7 @@ body {
   transition: background-color 2s linear;
 }
 .first-slide__mh {
+  width: 90%;
   opacity: 0;
 }
 .first-slide #papa {
@@ -271,7 +274,7 @@ body {
 
 @media all and (max-height: 728px) {
   .first-slide {
-    grid-template-rows: repeat(3, minmax(42px, 1fr)) 253px;
+    grid-template-rows: minmax(42px, 1fr) repeat(2, minmax(42px, 2fr)) 253px;
     grid-row-gap: 0;
   }
 }
@@ -347,73 +350,73 @@ body {
 }
 .second-slide__balloons #sonya {
   background-position: 0px -20px;
-  top: 4px;
-  left: 15px;
+  top: -43px;
+  left: 29px;
 }
 .second-slide__balloons #store {
   background-position: -229px -20px;
-  top: 10px;
-  left: 29px;
+  top: 44px;
+  left: 48px;
 }
 .second-slide__balloons #artemwife {
   background-position: -458px -20px;
-  top: -3px;
-  left: -24px;
+  top: 8px;
+  left: 5px;
 }
 .second-slide__balloons #zheltov {
   background-position: -687px -20px;
-  top: 40px;
-  left: -16px;
+  top: 5px;
+  left: -43px;
 }
 .second-slide__balloons #kravtsov {
   background-position: -916px -20px;
-  top: -49px;
-  left: 5px;
+  top: -7px;
+  left: -50px;
 }
 .second-slide__balloons #vlasov {
   background-position: -1145px -20px;
-  top: -20px;
-  left: 21px;
+  top: -37px;
+  left: 7px;
 }
 .second-slide__balloons #ufa {
   background-position: -1374px -20px;
-  top: -2px;
-  left: 12px;
+  top: 4px;
+  left: -21px;
 }
 .second-slide__balloons #lenya {
   background-position: 0px 267px;
-  top: -47px;
-  left: -8px;
+  top: -3px;
+  left: 12px;
 }
 .second-slide__balloons #kostya {
   background-position: -229px 267px;
-  top: -38px;
-  left: 40px;
+  top: -21px;
+  left: 36px;
 }
 .second-slide__balloons #stepka {
   background-position: -458px 267px;
-  top: 47px;
-  left: -22px;
+  top: -14px;
+  left: 49px;
 }
 .second-slide__balloons #kalinina {
   background-position: -687px 267px;
-  top: -38px;
-  left: 18px;
+  top: -5px;
+  left: -30px;
 }
 .second-slide__balloons #ozerov {
   background-position: -916px 267px;
-  top: 5px;
-  left: 5px;
+  top: 18px;
+  left: -21px;
 }
 .second-slide__balloons #zina {
   background-position: -1145px 267px;
-  top: 15px;
-  left: 33px;
+  top: 27px;
+  left: -6px;
 }
 .second-slide__balloons #konovalova {
   background-position: -1374px 267px;
-  top: 7px;
-  left: 22px;
+  top: 35px;
+  left: 43px;
 }
 
 #sonya-drawing {
@@ -425,9 +428,6 @@ body {
 }
 
 @media all and (max-width: 752px) {
-  .second-slide__words {
-    margin: 10px 0;
-  }
   .second-slide__words .second-slide__mh {
     position: static;
   }
