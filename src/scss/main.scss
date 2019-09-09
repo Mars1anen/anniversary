@@ -8,8 +8,10 @@ body {
     position: relative;
 }
 .slide {
+    padding-top: 40px;
+    padding-bottom: 40px;
     width: 100vw;
-    min-height: 100vh;
+    min-height: calc(100vh - 40px);
     overflow-x: hidden;
     position: absolute;
 }
@@ -22,6 +24,15 @@ body {
     font: 23px Georgia;
     cursor: pointer;
     outline: none;
+}
+
+.mh-text {
+    width: 100%;
+    max-width: 1880px;
+    margin: auto;
+    position: relative;
+    font: 82px 'ProximaNova';
+    color: #323232;
 }
 
 $modal-background: #ec2123;
@@ -73,7 +84,7 @@ $modal-text: #f2f2f4;
     /* Modal Body */
     .modal-body {
         text-align: center;
-        padding: 20px 36px;
+        padding: 20px 0;
         background: linear-gradient(307deg, #323232, #413d3db0);
         border-radius: 2px;
     }
@@ -86,5 +97,22 @@ $modal-text: #f2f2f4;
 @media all and (max-height: 950px ) {
     #modal-window {
         top: 0%;
+    }
+}
+@media all and (max-height: 728px ) {
+    .slide {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+@media all and (min-width: 485px) and (max-width: 880px) {
+    .mh-text {
+        font-size: 72px;
+    }
+}
+@media all and (max-width: 485px), (max-height: 498px) {
+    .mh-text {
+        position: static;
+        font-size: 42px;
     }
 }

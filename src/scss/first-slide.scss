@@ -9,7 +9,9 @@ $darker-gold: #efad36;
 $light-pink: #fff1f3;
 
 // Sizes
-// $odo_width: 572px;
+$mh_xl_offset: 10%;
+$mh_l_offset: 8%;
+$mh_ms_offset: 3%;
 $odo_width: 310px;
 
 // Mixins
@@ -26,47 +28,37 @@ $odo_width: 310px;
 
 .first-slide {
     display: grid;
-    grid-auto-rows: 140px 140px 140px auto;
+    max-height: 100vh;
+    padding-left: 40px;
+    grid-template-rows: repeat(2, 90px) minmax(min-content, 1fr) 253px;
     grid-row-gap: 1ch;
-    padding-top: 40px;
     background-color: $light-pink;
     transition: background-color 2s linear;
 
     &__mh {
-        margin-left: 40px;
         opacity: 0;
     }
     #papa {
+        left: $mh_xl_offset;
         text-align: left;
-
-        svg {
-            max-width: 300px;
-            position: relative;
-            left: 20%;
-            @include dark-grey-fill;
-        }
     }
     #happy_birthday {
         text-align: right;
-
-        svg {
-            max-width: 1000px;
-            position: relative;
-            right: 5%;
-            @include dark-grey-fill;
-            width: 100%;
-        }
+        right: $mh_xl_offset;
     }
     #text_roulette {
-        min-height: 90px;
+        height: 100%;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
         text-align: center;
         align-self: flex-end;
+        color: $bright-gold;
 
-        svg{
-            max-width: 900px;
+        span {
             width: 100%;
-            margin: auto;
-            fill: $bright-gold;
+            position: absolute;
         }
 
         #roulette_longeviety {
@@ -206,5 +198,33 @@ $odo_width: 310px;
         #letter_dometr {
             width: 75%;
         }
+    }
+}
+
+@media all and (max-height: 728px ) {
+    .first-slide {
+        grid-template-rows: repeat(3, minmax(42px, 1fr)) 253px;
+        grid-row-gap: 0;
+    }
+}
+@media all and (min-width: 1220px) and (max-width: 1620px) {
+    .first-slide #papa {
+        left: $mh_l_offset;
+    }
+    .first-slide #happy_birthday {
+        right: $mh_l_offset;
+    }
+}
+@media all and (max-width: 1219px) {
+    .first-slide #papa {
+        left: $mh_ms_offset;
+    }
+    .first-slide #happy_birthday {
+        right: $mh_ms_offset;
+    }
+}
+@media all and (max-width: 880px) {
+    .first-slide {
+        padding-left: 5px;
     }
 }
